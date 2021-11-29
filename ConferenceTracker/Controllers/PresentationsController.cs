@@ -79,7 +79,7 @@ namespace ConferenceTracker.Controllers
             var presentation = _presentationRepository.GetPresentation((int)id);
             if (presentation == null)
             {
-                _logger.LogError("Presentation id," + id + ", was not found.");
+                _logger.LogWarning("Presentation id," + id + ", was not found.");
                 return NotFound();
             }
             _logger.LogInformation("Presentation id," + id + ", was found. Returning 'Edit view'");
